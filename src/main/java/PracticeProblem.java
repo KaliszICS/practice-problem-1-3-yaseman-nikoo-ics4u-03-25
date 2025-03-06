@@ -30,4 +30,30 @@ public class PracticeProblem {
 	}
 	return b;
 }
+public static String backwardsReadFile(String filename){
+	FileReader inputStream= null;
+	String b="";
+	try{
+		inputStream= new FileReader(filename);
+		int c;
+		while ((c = inputStream.read()) != -1) {
+		b = (char)c+ b;
+	}
+}
+	catch (IOException e) {
+		System.out.println(e);
+	}
+finally {
+		try {
+		if (inputStream != null) {
+			inputStream.close();
+			}
+		}
+		catch(IOException e) {
+			System.out.println(e);
+			}
+}
+return b;
+}
+
 }
